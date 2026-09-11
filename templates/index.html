@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DataLeak Detector</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            🛡️ DataLeak Detector
+        </div>
+
+        <p>
+            Protect your information before sharing.
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <h1>
+                Detect Sensitive Information Before You Share
+            </h1>
+
+            <p>
+                Upload a file and scan it for sensitive information such as
+                phone numbers, emails, account numbers and API keys.
+            </p>
+
+
+            <!-- UPLOAD -->
+
+            <div class="upload-box">
+
+                <h2>
+                    📁 Upload Your File
+                </h2>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".txt,.docx,.pdf"
+                >
+
+                <p id="fileName">
+                    No file selected
+                </p>
+
+
+                <button id="scanButton">
+                    🔍 Scan File
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+
+        <section class="results">
+
+            <h2>
+                Privacy Risk Result
+            </h2>
+
+
+            <!-- RISK SCORE -->
+
+            <div class="risk-card">
+
+                <h3 id="riskScore">
+                    0/100
+                </h3>
+
+                <p id="riskLevel">
+                    No scan performed
+                </p>
+
+            </div>
+
+
+            <!-- SHARE STATUS -->
+
+            <div
+                class="share-status"
+                id="shareStatus"
+            >
+                📄 Upload a file to check sharing safety.
+            </div>
+
+
+            <!-- FINDINGS -->
+
+            <div class="findings-section">
+
+                <h3>
+                    🔎 Detected Information
+                </h3>
+
+
+                <div id="findings">
+
+                    <p>
+                        Upload a file to see detected sensitive information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAKE SAFE -->
+
+            <button id="safeButton">
+                🔒 Make Safe
+            </button>
+
+
+            <!-- BEFORE / AFTER -->
+
+            <div
+                class="preview-section"
+                id="previewSection"
+                style="display: none;"
+            >
+
+                <h2>
+                    🔐 Before & After Protection
+                </h2>
+
+
+                <div class="preview-container">
+
+
+                    <!-- BEFORE -->
+
+                    <div class="preview-card before-card">
+
+                        <h3>
+                            ⚠️ Before
+                        </h3>
+
+                        <div id="beforePreview">
+
+                            <p>
+                                Sensitive information detected
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- AFTER -->
+
+                    <div class="preview-card after-card">
+
+                        <h3>
+                            ✅ After
+                        </h3>
+
+                        <div id="afterPreview">
+
+                            <p>
+                                Information will be protected
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            DataLeak Detector © 2026 |
+            Detect • Assess • Protect
+        </p>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}">
+    </script>
+
+</body>
+
+</html>
